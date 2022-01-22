@@ -3,16 +3,14 @@ const tabContent = document.querySelectorAll("#tab-content>div");
 
 for (let i = 0; i < targetLink.length; i++) {
   targetLink[i].addEventListener("click", function (ev) {
-    // 2. link의 기본 속성 막기
+    // 2. link의 기본 속성 막기. 주소창 보면 알게 됨.
     ev.preventDefault();
 
-    //2-1. a의 href(속성) 가져와서 저장. (변수:orgTarget)
-    //=> 속성을 가져오는 것은 getAttribute();
+    //2-1. a의 href(속성) 가져와서 저장. (변수:orgTarget) => 속성을 가져오는 것은 getAttribute();
     let orgTarget = ev.target.getAttribute("href");
     //console 확인. console.log(orgTarget);
 
-    //2-2.가져온 속성에서 #을 빼서 변수에 저장.
-    // => a.replace('b', 'c'); : 변수 안에서 b라는 문자를 c로 바꿀 수 있다.
+    //2-2.가져온 속성에서 #을 빼서 변수에 저장. => a.replace('b', 'c'); : 변수 안에서 b를 c로 바꿀 수 있다.
     let tapTarget = orgTarget.replace("#", ""); //"tabs-1";
 
     //3.tab-content의 내용을 안보이게 하기.
